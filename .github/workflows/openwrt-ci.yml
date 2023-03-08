@@ -48,6 +48,13 @@ jobs:
           git remote add openwrt https://github.com/coolsnowwolf/lede.git
           git pull openwrt master
           git remote -v
+          
+      - name: 主题
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
       
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
@@ -101,3 +108,4 @@ jobs:
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
+      
