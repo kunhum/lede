@@ -24,7 +24,7 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: master
         fetch-depth: 0
@@ -32,8 +32,8 @@ jobs:
 
     - name: Set git config
       run : |
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "github-actions[bot]"
+        git config --global kunhum@163.com "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global kenneth "github-actions[bot]"
         git config --global pull.rebase false
         git config --global --list
 
