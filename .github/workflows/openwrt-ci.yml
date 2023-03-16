@@ -43,13 +43,6 @@ jobs:
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
       
-      - name: 主题下载
-        run: |
-          cd package
-          mkdir openwrt-packages
-          cd openwrt-packages
-          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-      
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
 
