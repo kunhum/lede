@@ -48,13 +48,6 @@ jobs:
           git remote add openwrt https://github.com/coolsnowwolf/lede.git
           git pull openwrt master
           git remote -v
-          
-     - name: 主题下载
-        run: |
-          cd package
-          mkdir openwrt-packages
-          cd openwrt-packages
-          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
       
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
@@ -78,11 +71,6 @@ jobs:
           CONFIG_TARGET_x86=y
           CONFIG_TARGET_x86_64=y
           CONFIG_TARGET_x86_64_Generic=y
-          EOF
-          
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-atmaterial=y
           EOF
           
           #
